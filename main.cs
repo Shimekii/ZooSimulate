@@ -29,7 +29,7 @@ class Warehouse{
 }
 
 class Zoo{
-  public List<Aviary> avlaries;
+  public List<Aviary> aviaries;
   public List<Decoration> decors;
   public Warehouse warehouse;
 
