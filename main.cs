@@ -18,20 +18,22 @@ class Decoration{
 }
 
 class Aviary{
-  public Food []foods;
+  public List<Food> foods;
   public double square;
 }
 
 class Warehouse{
-  public Animal []animals;
-  public Decoration []decors;
-  public Food []foods;
+  public List<Animal> animals;
+  public List<Decoration> decors;
+  public List<Food> foods;
 }
 
 class Zoo{
-  public Aviary []avlaries;
-  public Decoration []decors;
+  public List<Aviary> avlaries;
+  public List<Decoration> decors;
   public Warehouse warehouse;
+
+  public decor take
 }
 
 class User{
@@ -41,4 +43,8 @@ class User{
   public void buildZoo(){};
   public void deleteZoo(){};
   public void save(){};
+}
+
+interface ILocate{
+  void locate();
 }
