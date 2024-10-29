@@ -28,12 +28,17 @@ class Warehouse{
   public List<Food> foods;
 }
 
-class Zoo{
+interface ILocate{
+  void locate();
+}
+  
+class Zoo : ILocate {
   public List<Aviary> aviaries;
   public List<Decoration> decors;
   public Warehouse warehouse;
 
-  public decor take
+  public decor take(Decoration decor){};
+  public void locate(){};
 }
 
 class User{
@@ -43,8 +48,4 @@ class User{
   public void buildZoo(){};
   public void deleteZoo(){};
   public void save(){};
-}
-
-interface ILocate{
-  void locate();
 }
