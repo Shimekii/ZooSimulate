@@ -33,3 +33,12 @@ class Zoo{
   public Decoration []decors;
   public Warehouse warehouse;
 }
+
+class User{
+  public int money;
+  public Zoo zoo;
+
+  public void buildZoo(){};
+  public void deleteZoo(){};
+  public void save(){};
+}
