@@ -78,7 +78,9 @@ class Zoo : ILocate {
   
   public Decoration take(){};
   public void locate(Decoration dec){};
-  public void buyFood(){}
+  public void buyFood(Animal a){
+    warehouse.orderFood(a);
+  }
   public void place(Animal animals, Decoration decors){
     foreach(a in animals){
         aviaries.set(a);
@@ -87,8 +89,13 @@ class Zoo : ILocate {
         aviaries.set(a);
     }
   }
-  public void feedAnimal(Animal a){};
-  
+  public void feedAnimal(Animal a){
+    food = warehouse.getFood(a);
+    if (food){
+      a.feed(food);
+    }
+    else buyFood(a);
+  }
 }
 
 class User{
