@@ -4,6 +4,7 @@ class Animal{
   private string name;
   private string habitat;
   private int health;
+  private int cost;
 
   public void action(string type){};
   public void feed(Food f){};
@@ -11,16 +12,21 @@ class Animal{
 
 class Food{
   private string typeOfFood;
+  private int cost;
 }
 
 class Decoration{
   private string name;
   private double square;
+  private string typeDecor;
+  private int cost;
 }
 
 class Aviary{
   private List<Food> foods;
   private double square;
+  private List<Animal> animals;
+  private double temp;
 
   public void CreateLivindConditions(float temp, Food food);
   public void set(Animal a){}
@@ -32,6 +38,7 @@ class Warehouse{
   private List<Decoration> decors;
   private List<Food> foods;
   private int space;
+  
   public void orderFood(Food f){}
   public Food getFood(Animal a){
     return food;
