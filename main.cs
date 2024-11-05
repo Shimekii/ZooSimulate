@@ -22,7 +22,7 @@ class Decoration{
   private int cost;
 }
 
-class Aviary{
+class Aviary : IZoo{
   private List<Food> foods;
   private double square;
   private List<Animal> animals;
@@ -31,16 +31,24 @@ class Aviary{
   public void CreateLivindConditions(float temp, Food food);
   public void set(Animal a){}
   public void set(Decoration d){}
+  public void locate(){}
 }
 
-class Warehouse{
+class Warehouse : IZoo{
   private List<Animal> animals;
   private List<Decoration> decors;
   private List<Food> foods;
   private int space;
   
-  public void orderFood(Food f){}
+  public void orderFood(Animal a){
+    Food food = new Food();
+  }
   public Food getFood(Animal a){
+    Food food = NULL;
+    bool inStock = findFoodForAnimal(a);
+    if(inStock){
+      food = takeFood(a);
+    }
     return food;
   }
   public Animal takeAnimals(string species){
@@ -54,14 +62,16 @@ class Warehouse{
   }
   public Food takeFood(Animal a){
     return food;
-  };
+  }
+
+  public void locate(){}
 }
 
-interface ILocate{
+interface IZoo{
   void locate();
 }
   
-class Zoo : ILocate {
+class Zoo {
   private List<Aviary> aviaries;
   private List<Decoration> decors;
   private Warehouse warehouse;
@@ -81,6 +91,9 @@ class Zoo : ILocate {
 
         aviaries.CreateLivindConditions(temp, food);
   }
+  public placeSubject(IZoo iZoo){
+    iZoo.locate();
+  }
   public void deleteZoo(){}
   
   public Decoration take(){};
@@ -88,12 +101,12 @@ class Zoo : ILocate {
   public void buyFood(Animal a){
     warehouse.orderFood(a);
   }
-  public void place(Animal animals, Decoration decors){
+  public void place(i, Animal animals, Decoration decors){
     foreach(a in animals){
-        aviaries.set(a);
+        aviaries[i].set(a);
     }
         foreach(d in decors){
-        aviaries.set(a);
+        aviaries[i].set(a);
     }
   }
   public void feedAnimal(Animal a){
